@@ -5,6 +5,8 @@
 
 </head>
 <body>
+<h1>Property  Table</h1>
+<a href='/property/add'> <h2>Add new property</h2> </a>
 <div >
     <table border="1" cellpadding="7" cellspacing="7">
         <tr>
@@ -15,18 +17,9 @@
         </tr>
         <% for(var i=0; properties.length > i; i++) { %>
         <tr>
-            <td><a href="/property/?property_id=<%= properties[i].property_id %>">
-                    <%= properties[i].property_type %>
-                </a>
-            </td>
-            <td><a href="/property/?property_id=<%= properties[i].property_id %>">
-                    <%= properties[i].p_address_id %>
-                </a>
-            </td>
-            <td><a href="/property/?property_id=<%= properties[i].property_id %>">
-                    <%= properties[i].price %>
-                </a>
-            </td>
+            <td><%= properties[i].property_type %></td>
+            <td><%= properties[i].p_address_id %></td>
+            <td><%= properties[i].price %></td>
             <td>
                 <a href='/property/edit/?property_id=<%= properties[i].property_id %>'>
                     Edit

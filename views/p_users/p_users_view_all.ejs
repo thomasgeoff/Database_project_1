@@ -6,8 +6,11 @@
 </head>
 <body>
 <div >
+    <h1>Users Table</h1>
+    <a href='/p_users/add'> <h2>Add new user</h2> </a>
     <table border="1" cellpadding="7" cellspacing="7">
         <tr>
+            <th>User ID</th>
             <th>User Type</th>
             <th>First name</th>
             <th>Last name</th>
@@ -16,24 +19,13 @@
         </tr>
         <% for(var i=0; p_users.length > i; i++) { %>
         <tr>
-            <td><a href="/p_users/?p_address_id=<%= p_users[i].user_id %>">
-                    <%= p_users[i].user_type %>
-                </a>
-            </td>
-            <td><a href="/p_address/?p_address_id=<%= p_users[i].user_id %>">
-                    <%= p_users[i].fname %>
-                </a>
-            </td>
-            <td><a href="/p_address/?p_address_id=<%= p_users[i].user_id %>">
-                    <%= p_users[i].lname %>
-                </a>
-            </td>
-            <td><a href="/p_address/?p_address_id=<%= p_users[i].user_id %>">
-                    <%= p_users[i].contact %>
-                </a>
-            </td>
+            <td> <%= p_users[i].user_id %></td>
+            <td> <%= p_users[i].user_type %></td>
+            <td><%= p_users[i].fname %></td>
+            <td><%= p_users[i].lname %></td>
+            <td><%= p_users[i].contact %></td>
             <td>
-                <a href='/p_address/edit/?p_address_id=<%= p_users[i].user_id %>'>
+                <a href='/p_users/edit/?p_users_id=<%= p_users[i].user_id %>'>
                     Edit
                 </a>
             </td>

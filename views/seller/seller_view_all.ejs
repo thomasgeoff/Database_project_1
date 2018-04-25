@@ -5,6 +5,8 @@
 
 </head>
 <body>
+<h1>Seller Table</h1>
+<a href='/seller/add'> <h2>Add new seller</h2> </a>
 <div >
     <table border="1" cellpadding="7" cellspacing="7">
         <tr>
@@ -15,20 +17,11 @@
         </tr>
         <% for(var i=0; sellers.length > i; i++) { %>
         <tr>
-            <td><a href="/p_address/?p_address_id=<%= sellers[i].user_id %>">
-                    <%= sellers[i].user_id %>
-                </a>
-            </td>
-            <td><a href="/p_address/?p_address_id=<%= sellers[i].user_id %>">
-                    <%= sellers[i].property_id %>
-                </a>
-            </td>
-            <td><a href="/p_address/?p_address_id=<%= sellers[i].user_id %>">
-                    <%= sellers[i].property_for %>
-                </a>
-            </td>
+            <td><%= sellers[i].user_id %></td>
+            <td><%= sellers[i].property_id %></td>
+            <td><%= sellers[i].property_for %></td>
             <td>
-                <a href='/p_address/edit/?p_address_id=<%= sellers[i].user_id %>'>
+                <a href='/seller/edit/?user_id=<%= sellers[i].user_id %>'>
                     Edit
                 </a>
             </td>
