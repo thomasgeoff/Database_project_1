@@ -2,26 +2,27 @@
 <html>
 <head>
     <title>User - ADD</title>
+    <link rel='stylesheet' href='../stylesheets/style.css' />
 </head>
 <body>
 <h1>Add New User</h1>
 <form action="/p_users/insert" method="get">
-    <table border="1" cellpadding="7" cellspacing="7">
+    <table id='table' border="1" cellpadding="7" cellspacing="7">
         <tr>
             <th>User Type: </th>
-            <th><input name="user_type" type="text" /></th>
+            <td><input name="user_type" type="text" /></td>
         </tr>
         <tr>
             <th>First name: </th>
-            <th><input name="fname" type="text" /></th>
+            <td><input name="fname" type="text" /></td>
         </tr>
         <tr>
             <th>Last name: </th>
-            <th><input name="lname" type="text" /></th>
+            <td><input name="lname" type="text" /></td>
         </tr>
         <tr>
             <th>Contact: </th>
-            <th><input name="contact" type="text" /></th>
+            <td><input name="contact" type="text" /></td>
         </tr>
     </table>
     <br/>

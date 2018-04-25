@@ -2,23 +2,24 @@
 <html>
 <head>
     <title>Seller - ADD</title>
+    <link rel='stylesheet' href='../stylesheets/style.css' />
 </head>
 <body>
 <h1>Add New seller</h1>
 
 <form action="/seller/insert" method="get">
-    <table border="1" cellpadding="7" cellspacing="7">
+    <table id='table' border="1" cellpadding="7" cellspacing="7">
         <tr>
             <th>User ID: </th>
-            <th><input name="user_id" type="text" /></th>
+            <td><input name="user_id" type="text" /></td>
         </tr>
         <tr>
             <th>Property ID: </th>
-            <th><input name="property_id" type="text" /></th>
+            <td><input name="property_id" type="text" /></td>
         </tr>
         <tr>
             <th>Property For: </th>
-            <th><input name="property_for" type="text" /></th>
+            <td><input name="property_for" type="text" /></td>
         </tr>
     </table>
     <br/>
