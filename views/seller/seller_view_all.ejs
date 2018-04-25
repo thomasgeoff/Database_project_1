@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+</html>
+<head>
+    <title>Seller View</title>
+
+</head>
+<body>
+<div >
+    <table border="1" cellpadding="7" cellspacing="7">
+        <tr>
+            <th>User ID</th>
+            <th>Property ID</th>
+            <th>Property For</th>
+            <th width="120px">Action</th>
+        </tr>
+        <% for(var i=0; sellers.length > i; i++) { %>
+        <tr>
+            <td><a href="/p_address/?p_address_id=<%= sellers[i].user_id %>">
+                    <%= sellers[i].user_id %>
+                </a>
+            </td>
+            <td><a href="/p_address/?p_address_id=<%= sellers[i].user_id %>">
+                    <%= sellers[i].property_id %>
+                </a>
+            </td>
+            <td><a href="/p_address/?p_address_id=<%= sellers[i].user_id %>">
+                    <%= sellers[i].property_for %>
+                </a>
+            </td>
+            <td>
+                <a href='/p_address/edit/?p_address_id=<%= sellers[i].user_id %>'>
+                    Edit
+                </a>
+            </td>
+        </tr>
+        <% }%>
+
+    </table>
+</div>
+</div>
+</body>
+</html>
+

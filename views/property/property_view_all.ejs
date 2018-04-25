@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+</html>
+<head>
+    <title>Property View</title>
+
+</head>
+<body>
+<div >
+    <table border="1" cellpadding="7" cellspacing="7">
+        <tr>
+            <th>Property Type</th>
+            <th>Address</th>
+            <th>Price</th>
+            <th width="120px">Action</th>
+        </tr>
+        <% for(var i=0; properties.length > i; i++) { %>
+        <tr>
+            <td><a href="/property/?property_id=<%= properties[i].property_id %>">
+                    <%= properties[i].property_type %>
+                </a>
+            </td>
+            <td><a href="/property/?property_id=<%= properties[i].property_id %>">
+                    <%= properties[i].p_address_id %>
+                </a>
+            </td>
+            <td><a href="/property/?property_id=<%= properties[i].property_id %>">
+                    <%= properties[i].price %>
+                </a>
+            </td>
+            <td>
+                <a href='/property/edit/?property_id=<%= properties[i].property_id %>'>
+                    Edit
+                </a>
+            </td>
+        </tr>
+        <% }%>
+
+    </table>
+</div>
+</div>
+</body>
+</html>
+

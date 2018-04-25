@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Property - Update</title>
+</head>
+<body>
+<h1>Edit Existing Property</h1>
+<form action="/property/update" method="get">
+    <table border="1" cellpadding="7" cellspacing="7">
+        <tr>
+            <th><input type="hidden"
+                       id="property_id"
+                       name="property_id"
+                       value="<%= property.property_id %>"
+                />Property Type: </th>
+            <th><input id="property_type" name="property_type" type="text" value="<%= property.property_type%> "/></th>
+        </tr>
+        <tr>
+            <th>Address: </th>
+            <th><input id="p_address_id" name="p_address_id" type="text" value="<%property.p_address_id%>"/></th>
+
+        </tr>
+        <tr>
+            <th>Price: </th>
+            <th><input id="price" name="price" type="text" value="<%property.price%>"/></th>
+        </tr>
+    </table>
+    <br/>
+
+    <input type="submit" />
+
+</form>
+</body>
+</html>

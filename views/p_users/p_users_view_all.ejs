@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+</html>
+<head>
+    <title>Users View</title>
+
+</head>
+<body>
+<div >
+    <table border="1" cellpadding="7" cellspacing="7">
+        <tr>
+            <th>User Type</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Contact</th>
+            <th width="120px">Action</th>
+        </tr>
+        <% for(var i=0; p_users.length > i; i++) { %>
+        <tr>
+            <td><a href="/p_users/?p_address_id=<%= p_users[i].user_id %>">
+                    <%= p_users[i].user_type %>
+                </a>
+            </td>
+            <td><a href="/p_address/?p_address_id=<%= p_users[i].user_id %>">
+                    <%= p_users[i].fname %>
+                </a>
+            </td>
+            <td><a href="/p_address/?p_address_id=<%= p_users[i].user_id %>">
+                    <%= p_users[i].lname %>
+                </a>
+            </td>
+            <td><a href="/p_address/?p_address_id=<%= p_users[i].user_id %>">
+                    <%= p_users[i].contact %>
+                </a>
+            </td>
+            <td>
+                <a href='/p_address/edit/?p_address_id=<%= p_users[i].user_id %>'>
+                    Edit
+                </a>
+            </td>
+        </tr>
+        <% }%>
+
+    </table>
+</div>
+</div>
+</body>
+</html>
+
