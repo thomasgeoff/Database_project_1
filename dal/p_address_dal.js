@@ -48,3 +48,11 @@ exports.delete = function(params, callback) {
         callback(err, result)
     });
 };
+exports.orderby = function(callback){
+    //var query = 'CALL address_getall();';
+    var query = 'Select * from p_address_view order by city;';
+    connection.query(query, function (err, result) {
+        callback(err, result);
+
+    });
+};

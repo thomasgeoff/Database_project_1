@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var property_dal = require('../dal/property_dal');
 var p_address_dal = require('../dal/p_address_dal');
-
+var buyer_dal = require('../dal/buyer_dal');
 
 /* GET users listing. */
 router.get('/all', function(req, res, next) {
@@ -89,5 +89,41 @@ router.get('/delete', function(req, res) {
             res.redirect(302, '/property/all');
         }
     });
+});
+router.get('/distinct', function(req, res, next) {
+    property_dal.distinct(function (err, result) {
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            console.log(result);
+            res.render('property/property_distinct',{properties: result});
+        }
+
+    })
+});
+router.get('/in', function(req, res, next) {
+    property_dal.in(function (err, result) {
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            console.log(result);
+            res.render('property/property_in',{properties: result,buyers: result});
+        }
+
+    })
+});
+router.get('/compare', function(req, res, next) {
+    property_dal.in(function (err, result) {
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            console.log(result);
+            res.render('property/property_compare',{properties: result,buyers: result});
+        }
+
+    })
 });
 module.exports = router;

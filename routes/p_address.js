@@ -80,5 +80,16 @@ router.get('/delete', function(req, res) {
         }
     });
 });
+router.get('/orderby', function(req, res, next) {
+    p_address_dal.orderby(function (err, result) {
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            console.log(result);
+            res.render('p_address/p_address_view_all',{p_addresses: result});
+        }
 
+    })
+});
 module.exports = router;

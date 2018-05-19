@@ -48,3 +48,10 @@ exports.delete = function(params, callback) {
         callback(err, result)
     });
 };
+exports.union = function( callback) {
+    var query = 'Select user_id from buyer UNION select user_id from seller';
+
+    connection.query(query, function(err, result) {
+        callback(err, result)
+    });
+};

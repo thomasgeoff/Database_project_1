@@ -88,4 +88,24 @@ exports.delete = function(params, callback) {
         callback(err, result)
     });
 };
+exports.distinct = function(callback){
+    var query = 'select distinct price from property;';
+    connection.query(query, function (err, result) {
+        callback(err, result);
 
+    });
+};
+exports.in = function(callback){
+    var query = 'select * from property where property_type IN (select prop_type from buyer);';
+    connection.query(query, function (err, result) {
+        callback(err, result);
+
+    });
+};
+exports.compare = function(callback){
+    var query = 'select * from property where price < (select budget from buyer);';
+    connection.query(query, function (err, result) {
+        callback(err, result);
+
+    });
+};

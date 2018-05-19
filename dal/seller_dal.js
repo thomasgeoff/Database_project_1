@@ -49,10 +49,10 @@ exports.update = function(params, callback) {
         callback(err, result)
     });
 };
-exports.delete = function(user_id, callback) {
-    var query = 'Call seller_delete(?)';
+exports.delete = function(params, callback) {
+    var query = 'Delete from seller WHERE user_id = ?';
 
-    var queryData = [user_id];
+    var queryData = [params.user_id];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result)

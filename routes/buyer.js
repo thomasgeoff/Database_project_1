@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var buyer_dal = require('../dal/buyer_dal');
+var seller_dal = require('../dal/seller_dal');
 
 
 /* GET users listing. */
@@ -79,5 +80,17 @@ router.get('/delete', function(req, res) {
             res.redirect(302, '/buyer/all');
         }
     });
+});
+router.get('/union', function(req, res, next) {
+    buyer_dal.union(function (err, result) {
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            console.log(result);
+            res.render('buyer/buyer_union',{buyers: result,sellers: result});
+        }
+
+    })
 });
 module.exports = router;

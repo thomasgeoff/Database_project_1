@@ -80,5 +80,16 @@ router.get('/delete', function(req, res) {
         }
     });
 });
+router.get('/groupby', function(req, res, next) {
+    p_users_dal.groupby(function (err, result) {
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            console.log(result);
+            res.render('p_users/user_groupby',{p_users: result});
+        }
 
+    })
+});
 module.exports = router;

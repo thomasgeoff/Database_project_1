@@ -48,3 +48,10 @@ exports.delete = function(params, callback) {
         callback(err, result)
     });
 };
+exports.groupby = function(callback){
+    var query = 'select * from users group by user_type;';
+    connection.query(query, function (err, result) {
+        callback(err, result);
+
+    });
+};
