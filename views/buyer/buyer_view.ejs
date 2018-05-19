@@ -20,8 +20,11 @@
             <td><%= buyers[i].prop_type %></td>
             <td><%= buyers[i].budget %></td>
             <td>
-                <a href='/buyer/edit/?user_id=<%= buyers[i].user_id %>'>
+                <a class="button1" href='/buyer/edit/?user_id=<%= buyers[i].user_id %>'>
                     Edit
+                </a>
+                <a class="button2" href='/buyer/delete/?users_id=<%= buyers[i].user_id %>'>
+                    Delete
                 </a>
             </td>
         </tr>

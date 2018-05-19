@@ -21,3 +21,40 @@ exports.insert = function(params, callback){
 
     });
 };
+exports.insert = function(params, callback){
+    var query = 'insert into seller (user_id,property_id,property_for) values (?,?,?)';
+
+    var queryData = [params.user_id,params.property_id,params.property_for];
+
+    connection.query(query,queryData, function (err, result) {
+        callback(err, result);
+
+    });
+};
+exports.getinfo = function(user_id, callback) {
+    var query = 'CALL seller_getinfo(?)';
+    var queryData = [user_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};
+
+exports.update = function(params, callback) {
+    var query = 'UPDATE seller SET property_id = ?, property_for = ? WHERE user_id = ?';
+
+    var queryData = [params.property_id, params.property_for, params.user_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result)
+    });
+};
+exports.delete = function(user_id, callback) {
+    var query = 'Call seller_delete(?)';
+
+    var queryData = [user_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result)
+    });
+};

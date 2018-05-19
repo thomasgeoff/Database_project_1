@@ -24,8 +24,11 @@
             <td><%= p_users[i].lname %></td>
             <td><%= p_users[i].contact %></td>
             <td>
-                <a href='/p_users/edit/?p_users_id=<%= p_users[i].user_id %>'>
+                <a class="button1" href='/p_users/edit/?p_users_id=<%= p_users[i].user_id %>'>
                     Edit
+                </a>
+                <a class="button2" href='/p_users/delete/?p_users_id=<%= p_users[i].user_id %>'>
+                    Delete
                 </a>
             </td>
         </tr>

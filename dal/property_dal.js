@@ -10,7 +10,7 @@ exports.getAll = function(callback){
 
     });
 };
-/*
+
 exports.insert = function(params, callback){
     var query = 'insert into property (property_type,p_address_id,price) values (?,?,?)';
 
@@ -20,8 +20,8 @@ exports.insert = function(params, callback){
         callback(err, result);
 
     });
-}; */
-
+};
+/*
 exports.insert = function(params, callback) {
 
     // First insert the property
@@ -58,7 +58,7 @@ exports.insert = function(params, callback) {
     });
 
 };
-
+*/
 
 exports.getinfo = function(property_id, callback) {
     var query = 'CALL property_getinfo(?)';
@@ -68,40 +68,6 @@ exports.getinfo = function(property_id, callback) {
     });
 };
 
-var propertyAddressInsert = function(property_id,property_type, price, addressIdArray, callback){
-    // NOTE THAT THERE IS ONLY ONE QUESTION MARK IN VALUES ?
-    var query = 'CALL property_insert(?,?,?);';
-
-    // TO BULK INSERT RECORDS WE CREATE A MULTIDIMENSIONAL ARRAY OF THE VALUES
-    var propertyAddressData = [];
-    if (addressIdArray.constructor === Array) {
-        for (var i = 0; i < addressIdArray.length; i++) {
-            propertyAddressData.push([property_id,property_type, price, addressIdArray[i]]);
-        }
-    }
-    else {
-        propertyAddressData.push([property_id,property_type, price, addressIdArray]);
-    }
-    connection.query(query, [propertyAddressData], function(err, result){
-        callback(err, result);
-    });
-};
-
-
-
-var propertyAddressUpdate = function(property_id, addressIdArray, callback){
-    // First we need to remove all the entries, and then re-insert new ones
-    var query = 'CALL property_delete(?)';
-
-    connection.query(query, property_id, function (err, result) {
-        if(err || addressIdArray === undefined) {
-            // if error or no address were selected then return
-            callback(err, result);
-        } else { // insert addresses
-            propertyAddressInsert(property_id,property_type,p_address_id,price, callback);
-        }
-    });
-};
 
 exports.update = function(params, callback) {
     var query = 'UPDATE property SET property_type = ?,p_address_id = ?,price = ? WHERE property_id = ?';
@@ -111,6 +77,15 @@ exports.update = function(params, callback) {
         propertyAddressUpdate(params.property_id,params.property_type,params.p_address_id,params.price,  function (err, result) {
             callback(err, result);
         });
+    });
+};
+exports.delete = function(params, callback) {
+    var query = 'Delete from property WHERE property_id = ?';
+
+    var queryData = [params.property_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result)
     });
 };
 

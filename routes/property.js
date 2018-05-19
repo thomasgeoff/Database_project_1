@@ -17,7 +17,7 @@ router.get('/all', function(req, res, next) {
 
     })
 });
-/*
+
 router.get('/add', function(req, res, next) {
     property_dal.getAll(function (err, result) {
         if(err){
@@ -29,8 +29,8 @@ router.get('/add', function(req, res, next) {
         }
 
     })
-}); */
-
+});
+/*
 router.get('/add', function(req, res, next) {
     p_address_dal.getAll(function (err, result) {
         if(err){
@@ -42,7 +42,7 @@ router.get('/add', function(req, res, next) {
         }
 
     })
-});
+}); */
 
 router.get('/insert', function(req, res, next) {
 
@@ -63,7 +63,7 @@ router.get('/edit', function(req, res, next) {
         if(err) { res.send(err); }
         else {
             res.render('property/propertyUpdate',
-                {property: result[0][0],p_addresses_result: result[1]});
+                {properties: result[0][0]});
         }
     });
 });
@@ -79,5 +79,15 @@ router.get('/update', function(req, res) {
         }
     });
 });
-
+router.get('/delete', function(req, res) {
+    property_dal.delete(req.query, function(err, result) {
+        if (err) {
+            res.send(err);
+        }
+        else {
+            console.log(result);
+            res.redirect(302, '/property/all');
+        }
+    });
+});
 module.exports = router;

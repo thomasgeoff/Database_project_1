@@ -42,7 +42,42 @@ router.get('/insert', function(req, res, next) {
         }
 
     })
+});
+router.get('/edit', function(req, res) {
+    seller_dal.getinfo(req.query.user_id, function(err,result) {
+        if (err) {
+            console.log(err);
+            res.send(err);
+        }
+        else {
+            console.log(result);
+            res.render('seller/sellerUpdate', {sellers:
+                    result[0][0]});
+        }
+    });
+});
 
+router.get('/update', function(req, res) {
+    seller_dal.update(req.query, function(err, result) {
+        if (err) {
+            res.send(err);
+        }
+        else {
+            console.log(result);
+            res.redirect(302, '/seller/all');
+        }
+    });
+});
+router.get('/delete', function(req, res) {
+    seller_dal.delete(req.query, function(err, result) {
+        if (err) {
+            res.send(err);
+        }
+        else {
+            console.log(result);
+            res.redirect(302, '/seller/all');
+        }
+    });
 });
 
 module.exports = router;

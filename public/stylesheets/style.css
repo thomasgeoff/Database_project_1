@@ -40,3 +40,25 @@ a {
   margin: 4px 2px;
   cursor: pointer;
 }
+.button2 {
+  background-color:#DF4747;
+  color: black;
+  border: none;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {
+  background-color: #E2E23A;
+  color: black;
+  border: none;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}

@@ -1,33 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Property - Update</title>
+    <title> Property - Edit </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-<h1>Edit Existing Property</h1>
+<h1> Edit Property  </h1>
 <form action="/property/update" method="get">
-    <table border="1" cellpadding="7" cellspacing="7">
+    <table id='table' border="1" cellpadding="7" cellspacing="7">
         <tr>
-            <th><input type="hidden"
-                       id="property_id"
-                       name="property_id"
-                       value="<%= property.property_id %>"
-                />Property Type: </th>
-            <th><input id="property_type" name="property_type" type="text" value="<%= property.property_type%> "/></th>
-        </tr>
-        <tr>
-            <th>Address: </th>
-            <th><input id="p_address_id" name="p_address_id" type="text" value="<%property.p_address_id%>"/></th>
-
-        </tr>
-        <tr>
-            <th>Price: </th>
-            <th><input id="price" name="price" type="text" value="<%property.price%>"/></th>
+            <th><input type="hidden" id="property_id" name="property_id" value="<%= properties.property_id %>"/>
+                Property Type:</th>
+            <td><input id = "property_type" name = "property_type" type= "text" value="<%= properties.property_type %>"/></td></tr>
+        <tr><th>Address ID:</th>
+            <td><input id = "p_address_id" name = "p_address_id" type= "text" value="<%= properties.p_address_id %>"/></td></tr>
+        <tr><th>Price :</th>
+            <td><input id = "price" name = "price" type= "text" value="<%= properties.price %>"/></td>
         </tr>
     </table>
     <br/>
-
-    <input type="submit" />
+    <a href='/' class="button" >Main Page</a>
+    <input type = "submit" class="button"/>
 
 </form>
 </body>

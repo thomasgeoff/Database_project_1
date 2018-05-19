@@ -20,8 +20,11 @@
                     <td><%= p_addresses[i].city %></td>
                     <td><%= p_addresses[i].zip %></td>
                     <td>
-                        <a href='/p_address/edit/?p_address_id=<%= p_addresses[i].p_address_id %>'>
+                        <a class="button1" href='/p_address/edit/?p_address_id=<%= p_addresses[i].p_address_id %>'>
                             Edit
+                        </a>
+                        <a class="button2" href='/p_address/delete/?p_address_id=<%= p_addresses[i].p_address_id %>'>
+                            Delete
                         </a>
                     </td>
                 </tr>

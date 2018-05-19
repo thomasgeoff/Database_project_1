@@ -14,11 +14,7 @@
         </tr>
         <tr>
             <th>Address: </th>
-            <td><% for(var i=0; p_addresses_result.length > i; i++ ) { %>
-                <input type="checkbox" name="p_address_id" value="<%= p_addresses_result[i].p_address_id %>">
-                <%= p_addresses_result[i].city + ', ' + p_addresses_result[i].zip %>
-                <br />
-                <% } %>
+            <td><input name="p_address_id" type="text" />
             </td>
         </tr>
     <tr>

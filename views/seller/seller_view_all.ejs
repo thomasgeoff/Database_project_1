@@ -20,8 +20,11 @@
             <td><%= sellers[i].property_id %></td>
             <td><%= sellers[i].property_for %></td>
             <td>
-                <a href='/seller/edit/?user_id=<%= sellers[i].user_id %>'>
+                <a class="button1" href='/seller/edit/?user_id=<%= sellers[i].user_id %>'>
                     Edit
+                </a>
+                <a class="button2" href='/seller/delete/?user_id=<%= sellers[i].user_id %>'>
+                    Delete
                 </a>
             </td>
         </tr>

@@ -21,3 +21,30 @@ exports.insert = function(params, callback){
 
     });
 };
+exports.getinfo = function(user_id, callback) {
+    var query = 'CALL p_user_getinfo(?)';
+    var queryData = [user_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};
+
+exports.update = function(params, callback) {
+    var query = 'UPDATE users SET user_type = ?, fname = ?, lname = ?, contact = ? WHERE user_id = ?';
+
+    var queryData = [params.user_type, params.fname, params.lname,params.contact, params.user_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result)
+    });
+};
+exports.delete = function(params, callback) {
+    var query = 'Delete from users WHERE user_id = ?';
+
+    var queryData = [params.user_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result)
+    });
+};
