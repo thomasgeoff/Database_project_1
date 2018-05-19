@@ -116,3 +116,10 @@ exports.exist = function(callback){
 
     });
 };
+exports.join = function(callback){
+    var query = 'select p.property_type,p.p_address_id,p.price,a.city,a.property_name,a.zip from property p JOIN p_address a on p.p_address_id=a.p_address_id;';
+    connection.query(query, function (err, result) {
+        callback(err, result);
+
+    });
+};

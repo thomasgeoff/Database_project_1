@@ -138,4 +138,16 @@ router.get('/exist', function(req, res, next) {
 
     })
 });
+router.get('/join', function(req, res, next) {
+    property_dal.in(function (err, result) {
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            console.log(result);
+            res.render('property/property_join',{properties: result,p_addresses: result});
+        }
+
+    })
+});
 module.exports = router;

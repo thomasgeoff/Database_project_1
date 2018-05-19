@@ -55,3 +55,10 @@ exports.groupby = function(callback){
 
     });
 };
+exports.sub = function(callback){
+    var query = 'select user_type,fname,lname,contact from users where user_id NOT IN (select user_id from buyer);';
+    connection.query(query, function (err, result) {
+        callback(err, result);
+
+    });
+};

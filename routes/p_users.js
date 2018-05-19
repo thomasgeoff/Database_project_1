@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var p_users_dal = require('../dal/p_users_dal');
+var buyer_dal = require('../dal/buyer_dal');
 
 
 /* GET users listing. */
@@ -88,6 +89,18 @@ router.get('/groupby', function(req, res, next) {
         }else{
             console.log(result);
             res.render('p_users/user_groupby',{p_users: result});
+        }
+
+    })
+});
+router.get('/sub', function(req, res, next) {
+    p_users_dal.groupby(function (err, result) {
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            console.log(result);
+            res.render('p_users/p_users_sub',{p_users: result, buyers: result});
         }
 
     })
