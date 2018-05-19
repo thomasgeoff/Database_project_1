@@ -109,3 +109,10 @@ exports.compare = function(callback){
 
     });
 };
+exports.exist = function(callback){
+    var query = 'select property_type from property where exists (select prop_type from buyer where user_id > 0);';
+    connection.query(query, function (err, result) {
+        callback(err, result);
+
+    });
+};

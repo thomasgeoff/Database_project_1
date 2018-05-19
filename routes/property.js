@@ -126,4 +126,16 @@ router.get('/compare', function(req, res, next) {
 
     })
 });
+router.get('/exist', function(req, res, next) {
+    property_dal.in(function (err, result) {
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            console.log(result);
+            res.render('property/property_exist',{properties: result,buyers: result});
+        }
+
+    })
+});
 module.exports = router;
