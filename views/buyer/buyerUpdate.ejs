@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Buyers - Edit </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1> Edit Buyer </h1>
+<form action="/buyer/update" method="get">
+    <table id='table' border="1" cellpadding="7" cellspacing="7">
+        <tr>
+            <th><input type="hidden" id="user_id" name="user_id" value="<%= buyers.user_id %>"/>
+                Property_type:</th>
+            <td><input id = "prop_type" name = "prop_type" type= "text" value="<%= buyers.prop_type %>"/></td></tr>
+        <tr><th>Budget:</th>
+            <td><input id = "budget" name = "budget" type= "text" value="<%= buyers.budget %>"/></td></tr>
+    </table>
+    <br/>
+    <a href='/' class="button" >Main Page</a>
+    <input type = "submit" class="button"/>
+
+</form>
+</body>
+</html>

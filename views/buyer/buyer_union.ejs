@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+</html>
+<head>
+    <title>Buyers View</title>
+    <link rel='stylesheet' href='../stylesheets/style.css' />
+</head>
+<body>
+<h1>UNION</h1>
+<div >
+    <table id='table' border="1" cellpadding="7" cellspacing="7">
+        <tr>
+            <th>User ID</th>
+        </tr>
+        <% for(var i=0; buyers.length > i; i++) { %>
+        <tr>
+            <td><%= buyers[i].user_id %></td>
+        </tr>
+        <% }%>
+        <% for(var j=0; sellers.length > j; j++) { %>
+        <tr>
+            <td><%= sellers[j].user_id %></td>
+        </tr>
+        <% }%>
+    </table>
+    </br>
+    <a href='/' class="button" >Main Page</a>
+</div>
+</div>
+</body>
+</html>
+

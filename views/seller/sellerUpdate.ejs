@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Seller - Edit </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1> Edit Seller </h1>
+<form action="/seller/update" method="get">
+    <table id='table' border="1" cellpadding="7" cellspacing="7">
+        <tr>
+            <th><input type="hidden" id="user_id" name="user_id" value="<%= sellers.user_id %>"/>
+               Property ID:</th>
+            <td><input id = "property_id" name = "property_id" type= "text" value="<%= sellers.property_id %>"/></td></tr>
+        <tr><th>Property For:</th>
+            <td><input id = "property_for" name = "property_for" type= "text" value="<%= sellers.property_for %>"/></td></tr>
+    </table>
+    <br/>
+    <a href='/' class="button" >Main Page</a>
+    <input type = "submit" class="button"/>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+</html>
+<head>
+    <title>Users View</title>
+    <link rel='stylesheet' href='../stylesheets/style.css' />
+</head>
+<body>
+<div >
+    <h1>Users Table</h1>
+    <table id='table' border="1" cellpadding="7" cellspacing="7">
+        <tr>
+            <th>User ID</th>
+            <th>User Type</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Contact</th>
+        </tr>
+        <% for(var i=0; p_users.length > i; i++) { %>
+        <tr>
+            <td> <%= p_users[i].user_id %></td>
+            <td> <%= p_users[i].user_type %></td>
+            <td><%= p_users[i].fname %></td>
+            <td><%= p_users[i].lname %></td>
+            <td><%= p_users[i].contact %></td>
+        </tr>
+        <% }%>
+
+    </table>
+    </br>
+    <a href='/' class="button" >Main Page</a>
+</div>
+</div>
+</body>
+</html>
+

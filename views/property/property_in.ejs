@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+</html>
+<head>
+    <title>Property View</title>
+    <link rel='stylesheet' href='../stylesheets/style.css' />
+</head>
+<body>
+<h1>IN</h1>
+<div >
+    <table id='table' border="1" cellpadding="7" cellspacing="7">
+        <tr>
+            <th>Property Type</th>
+            <th>Address ID</th>
+            <th>Price</th>
+        </tr>
+        <% for(var i=0; properties.length > i; i++) { %>
+        <tr>
+            <td><%= properties[i].property_type %></td>
+            <td><%= properties[i].p_address_id %></td>
+            <td><%= properties[i].price %></td>
+        </tr>
+        <% }%>
+
+    </table>
+    </br>
+    <a href='/' class="button" >Main Page</a>
+</div>
+</div>
+</body>
+</html>
+
