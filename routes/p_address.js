@@ -87,7 +87,7 @@ router.get('/orderby', function(req, res, next) {
             res.send(err);
         }else{
             console.log(result);
-            res.render('p_address/p_address_view_all',{p_addresses: result});
+            res.render('p_address/p_address_orderby',{p_addresses: result});
         }
 
     })

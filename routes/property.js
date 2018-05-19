@@ -139,13 +139,25 @@ router.get('/exist', function(req, res, next) {
     })
 });
 router.get('/join', function(req, res, next) {
-    property_dal.in(function (err, result) {
+    property_dal.join(function (err, result) {
         if(err){
             console.log(err);
             res.send(err);
         }else{
             console.log(result);
             res.render('property/property_join',{properties: result,p_addresses: result});
+        }
+
+    })
+});
+router.get('/advancejoin', function(req, res, next) {
+    property_dal.advancejoin(function (err, result) {
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            console.log(result);
+            res.render('property/property_advancejoin',{properties: result,p_addresses: result});
         }
 
     })

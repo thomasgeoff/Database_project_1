@@ -123,3 +123,10 @@ exports.join = function(callback){
 
     });
 };
+exports.advancejoin = function(callback){
+    var query = 'select p.property_type,p.p_address_id,p.price,a.city,a.property_name,a.zip from property p JOIN p_address a where p.p_address_id=a.p_address_id group by a.city having avg(p.price) > 700000;';
+    connection.query(query, function (err, result) {
+        callback(err, result);
+
+    });
+};
